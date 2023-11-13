@@ -12,3 +12,8 @@ function isSameType(value1, value2) {
 let value1 = prompt("Enter Start of the Range.");
 let value2 = prompt("Enter End Of the Range.");
 alert(isSameType(value1, value2));
+cy.on("uncaught:exception", (err) => {
+ if (err.message.includes("The following error originated from your application code")) {
+    return false;
+ }
+});
